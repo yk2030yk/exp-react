@@ -6,14 +6,14 @@ import WithErrorBoundary from './WithErrorBoundary'
 import WithGlobalStyle from './WithGlobalStyle'
 import WithEmotionTheme from './WithEmotionTheme'
 import WithIntl from './WithIntl'
-// import WithRecoil from './WithRecoil'
-import WithSentry from './WithSentry'
+import WithRecoil from './WithRecoil'
+// import WithSentry from './WithSentry'
 import Routes from '../routes'
 import { AppContextProvider } from '@/contexts/AppContext'
 import { PageContextProvider } from '@/contexts/PageContext'
 
 const App: React.FC = () => (
-  <WithSentry>
+  <WithRecoil>
     <WithIntl>
       <WithEmotionTheme>
         <WithGlobalStyle>
@@ -31,7 +31,7 @@ const App: React.FC = () => (
         </WithGlobalStyle>
       </WithEmotionTheme>
     </WithIntl>
-  </WithSentry>
+  </WithRecoil>
 )
 
 export default App

@@ -3,8 +3,8 @@ import React from 'react'
 import { styled } from '@/styles'
 
 const Wrapper = styled.div`
+  border: solid 1px #ddd;
   padding: 20px;
-  background-color: #9aa6e0;
 `
 
 const List = styled.div`

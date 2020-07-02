@@ -4,9 +4,9 @@ import ChildComponent2B from './ChildComponent2B'
 import { styled } from '@/styles'
 
 const Wrapper = styled.div`
+  border: solid 1px #ddd;
   padding: 20px;
   margin-bottom: 20px;
-  background-color: #e2a8a8;
 `
 
 type Props = {

@@ -5,9 +5,9 @@ import HeavyComponent from './HeavyComponent'
 import { styled } from '@/styles'
 
 const Wrapper = styled.div`
-  border: solid 1px #ddd;
   padding: 20px;
   margin-bottom: 20px;
+  background-color: #aedebb;
 `
 
 type Props = {

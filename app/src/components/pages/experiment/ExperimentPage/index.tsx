@@ -6,6 +6,7 @@ import Experiment1 from '@/components/organisms/experiment/Experiment1'
 import Experiment2 from '@/components/organisms/experiment/Experiment2'
 import Experiment3 from '@/components/organisms/experiment/Experiment3'
 import Experiment4 from '@/components/organisms/experiment/Experiment4'
+import Experiment5 from '@/components/organisms/experiment/Experiment5'
 
 const Page: React.FC = () => (
   <DefaultTemplate>
@@ -21,6 +22,9 @@ const Page: React.FC = () => (
       </S.Box>
       <S.Box>
         <Experiment4 />
+      </S.Box>
+      <S.Box>
+        <Experiment5 />
       </S.Box>
     </S.Content>
   </DefaultTemplate>

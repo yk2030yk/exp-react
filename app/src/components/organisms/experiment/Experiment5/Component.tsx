@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 
+import { useAppDispatch, useAppSelector } from './store'
 import ChildComponent1A from './ChildComponent1A'
 import ChildComponent2A from './ChildComponent2A'
 import { styled } from '@/styles'
+import { actions, selectors } from './store/name'
 
 const Wrapper = styled.div`
+  border: solid 1px #ddd;
   padding: 20px;
   background-color: #fff;
   width: 1000px;
-  background-color: #d4cca7;
 
   p {
     margin-bottom: 20px;
@@ -23,7 +25,9 @@ const Components = styled.div`
 `
 
 const Page: React.FC = () => {
-  const [name, setName] = useState<string>('')
+  const name = useAppSelector(selectors.name)
+  const dispatch = useAppDispatch()
+  const setName = (n: string) => dispatch(actions.setName(n))
   return (
     <Wrapper>
       <p>ParentComponent</p>

@@ -3,9 +3,9 @@ import React from 'react'
 import { styled } from '@/styles'
 
 const Wrapper = styled.div`
+  border: solid 1px #ddd;
   padding: 20px;
   margin-bottom: 20px;
-  background-color: #9aa6e0;
 `
 
 const Name = styled.p`
@@ -20,11 +20,13 @@ type Props = {
   name: string
 }
 
-const Page: React.FC<Props> = ({ name }) => (
-  <Wrapper>
-    <p>ChildComponent2-C</p>
-    <Name>{`input value is "${name}"`}</Name>
-  </Wrapper>
-)
+const Page: React.FC<Props> = ({ name }) => {
+  return (
+    <Wrapper>
+      <p>ChildComponent2-C</p>
+      <Name>{`input value is "${name}"`}</Name>
+    </Wrapper>
+  )
+}
 
 export default Page

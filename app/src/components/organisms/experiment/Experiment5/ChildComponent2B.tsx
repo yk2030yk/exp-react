@@ -1,12 +1,13 @@
 import React from 'react'
 
-import ChildComponent2B from './ChildComponent2B'
+import ChildComponent2C from './ChildComponent2C'
+import HeavyComponent from './HeavyComponent'
 import { styled } from '@/styles'
 
 const Wrapper = styled.div`
+  border: solid 1px #ddd;
   padding: 20px;
   margin-bottom: 20px;
-  background-color: #e2a8a8;
 `
 
 type Props = {
@@ -15,8 +16,9 @@ type Props = {
 
 const Page: React.FC<Props> = ({ name }) => (
   <Wrapper>
-    <p>ChildComponent2-A</p>
-    <ChildComponent2B name={name} />
+    <p>ChildComponent2-B</p>
+    <ChildComponent2C name={name} />
+    <HeavyComponent />
   </Wrapper>
 )
 
