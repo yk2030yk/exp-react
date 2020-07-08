@@ -1,8 +1,8 @@
 import React from 'react'
 
 import { styled } from '@/styles'
-import { profileWithIdState, selectedId, modalState } from './recoil/name'
-import { useRecoilValue, useSetRecoilState } from 'recoil'
+import { Profile, actions } from './store/profile'
+import { useDispatch } from 'react-redux'
 
 const Wrapper = styled.div`
   min-height: 100px;
@@ -23,21 +23,18 @@ const Wrapper = styled.div`
   }
 `
 
-const ProfileCard: React.FC<{ id: string }> = ({ id }) => {
-  const profile = useRecoilValue(profileWithIdState(id))
-  const setSelectedId = useSetRecoilState(selectedId)
-  const setModal = useSetRecoilState(modalState)
+const ProfileCard: React.FC<{ profile: Profile }> = ({ profile }) => {
+  const dispatch = useDispatch()
 
   const handleClick = () => {
-    setModal(true)
-    setSelectedId(id)
+    dispatch(actions.setSelectedProfile(profile))
   }
 
   return (
     <Wrapper onClick={() => handleClick()}>
       <div>
         <p>ID</p>
-        <p>{id}</p>
+        <p>{profile.id}</p>
       </div>
       <div>
         <p>名前</p>

@@ -3,8 +3,9 @@ import React from 'react'
 import { styled } from '@/styles'
 import ProfileList from './ProfileList'
 import AddButton from './AddButton'
-import InputModal from './InputModal'
 import InputArea from './InputArea'
+import { Provider } from 'react-redux'
+import { store } from './store'
 
 const Wrapper = styled.div`
   border: solid 1px #ddd;
@@ -31,7 +32,7 @@ const Components = styled.div``
 
 const Page: React.FC = () => {
   return (
-    <>
+    <Provider store={store}>
       <Wrapper>
         <p>ParentComponent</p>
         <Components>
@@ -48,7 +49,7 @@ const Page: React.FC = () => {
           </Columns>
         </Components>
       </Wrapper>
-    </>
+    </Provider>
   )
 }
 

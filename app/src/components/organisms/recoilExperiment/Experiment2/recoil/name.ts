@@ -1,4 +1,4 @@
-import { atomFamily, atom, selector } from 'recoil'
+import { atom, selector } from 'recoil'
 
 export type Profile = {
   name: string
@@ -20,13 +20,14 @@ export const profileIdsState = atom<string[]>({
   default: [],
 })
 
-export const profileWithIdState = atomFamily<Profile, string>({
-  key: `profileWithIdState`,
-  default: {
-    name: '',
-    strengths: '',
-  },
-})
+export const profileWithIdState = (id: string) =>
+  atom<Profile>({
+    key: `profileWithIdState-${id}`,
+    default: {
+      name: '',
+      strengths: '',
+    },
+  })
 
 export const selectedProfileState = selector({
   key: 'selectedProfileState',
